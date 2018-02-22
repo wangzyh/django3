@@ -25,9 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-vs)ia#vk&s)v^rtba^!+iz8%vnojm3ui2ep=r4^l)-*gomarx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
 
 # Application definition
@@ -115,10 +115,12 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
 # 开发阶段上传文件目录
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
 # 部署后的上传文件目录
-# MEDIA_ROOT = '/var/www/dailyfresh/static'
+# 采集静态文件 执行 python manage.py collectstatic
+STATIC_ROOT = '/var/www/dailyfresh/static'
 
 
 TINYMCE_DEFAULT_CONFIG = {

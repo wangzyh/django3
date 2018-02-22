@@ -96,5 +96,5 @@ class MySearchView(SearchView):
         context = super(MySearchView, self).extra_context()
         context['title'] = '搜索'
         context['guest_cart'] = 1
-        context['cart_count'] = cart_count(self.request)
+        context['carts'] = cart_count(self.request)
         return context
